@@ -1,10 +1,11 @@
-package com.example.giphyapp
+package com.example.giphyapp.ui
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.giphyapp.data.Gif
 import com.example.giphyapp.databinding.ItemGifBinding
 
 class GifAdapter(private var gifs: List<Gif>, private val listener: OnItemClickListener) :

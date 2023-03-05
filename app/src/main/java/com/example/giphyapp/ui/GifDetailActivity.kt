@@ -1,8 +1,9 @@
-package com.example.giphyapp
+package com.example.giphyapp.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.example.giphyapp.data.Gif
 import com.example.giphyapp.databinding.ActivityGifDetailBinding
 
 class GifDetailActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.example.giphyapp
+package com.example.giphyapp.data
 
 import android.os.Parcel
 import android.os.Parcelable
@@ -10,7 +10,6 @@ data class Gif(
     @SerializedName("images") val images: Images
 ) : Parcelable {
 
-    // Реализация интерфейса Parcelable
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(id)
         parcel.writeString(title)
@@ -21,7 +20,6 @@ data class Gif(
         return 0
     }
 
-    // Конструктор, используемый для создания объекта Gif из Parcelable
     constructor(parcel: Parcel) : this(
         parcel.readString()!!,
         parcel.readString()!!,
@@ -43,7 +41,6 @@ data class Images(
     @SerializedName("fixed_width") val fixedWidth: FixedWidth
 ) : Parcelable {
 
-    // Реализация интерфейса Parcelable
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeParcelable(fixedWidth, flags)
     }
@@ -52,7 +49,6 @@ data class Images(
         return 0
     }
 
-    // Конструктор, используемый для создания объекта Images из Parcelable
     constructor(parcel: Parcel) : this(
         parcel.readParcelable<FixedWidth>(FixedWidth::class.java.classLoader)!!
     )

@@ -1,4 +1,4 @@
-package com.example.giphyapp
+package com.example.giphyapp.data
 
 data class GiphyResponse(
     val data: List<Gif>,

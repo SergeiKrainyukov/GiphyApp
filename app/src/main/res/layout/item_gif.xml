@@ -5,7 +5,7 @@
     <data>
         <variable
             name="gif"
-            type="com.example.giphyapp.Gif" />
+            type="com.example.giphyapp.data.Gif" />
     </data>
 
     <androidx.cardview.widget.CardView

@@ -14,7 +14,7 @@
         android:theme="@style/Theme.GiphyApp"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".GifDetailActivity"
+            android:name=".ui.GifDetailActivity"
             android:exported="false" />
     </application>
 

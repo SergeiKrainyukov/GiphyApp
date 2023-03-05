@@ -1,4 +1,4 @@
-package com.example.giphyapp
+package com.example.giphyapp.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.giphyapp.data.Gif
+import com.example.giphyapp.data.GiphyApiClient
 import com.example.giphyapp.databinding.ActivityMainBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -36,18 +38,14 @@ class MainActivity : AppCompatActivity(), GifAdapter.OnItemClickListener {
     }
 
     private fun performSearch() {
-        // hide keyboard
         hideKeyboard()
 
-        // get search query from EditText
         val query = binding.searchInput.text.toString()
 
-        // make API request
         GlobalScope.launch {
             val response = GiphyApiClient().searchGifs(query)
 
             withContext(Dispatchers.Main) {
-                // update RecyclerView with new data
                 response?.let { adapter.update(it.data) }
             }
         }
