@@ -25,13 +25,11 @@ class MainActivity : AppCompatActivity(), GifAdapter.OnItemClickListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // set up RecyclerView
         adapter = GifAdapter(listOf(), this)
         layoutManager = LinearLayoutManager(this)
         binding.gifRecyclerView.adapter = adapter
         binding.gifRecyclerView.layoutManager = layoutManager
 
-        // set up search button click listener
         binding.btnSearch.setOnClickListener {
             performSearch()
         }
