@@ -2,6 +2,7 @@ package com.example.giphyapp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.giphyapp.databinding.ActivityGifDetailBinding
 
 class GifDetailActivity : AppCompatActivity() {
@@ -18,9 +19,9 @@ class GifDetailActivity : AppCompatActivity() {
 
         val gif = intent.getParcelableExtra<Gif>(EXTRA_GIF) ?: return
 
-//        Glide.with(this)
-//            .load(gif.images.fixedWidth.url)
-//            .into(binding.gifImageView)
+        Glide.with(this)
+            .load(gif.images.fixedWidth.url)
+            .into(binding.gifImageView)
 
         binding.titleTextView.text = gif.title
     }

@@ -70,7 +70,7 @@ data class Images(
 
 data class FixedWidth(
     @SerializedName("url")
-    val url: String?,
+    val url: String,
     @SerializedName("width")
     val width: String?,
     @SerializedName("height")
@@ -78,7 +78,7 @@ data class FixedWidth(
 ) : Parcelable {
 
     constructor(parcel: Parcel) : this(
-        parcel.readString(),
+        parcel.readString()!!,
         parcel.readString(),
         parcel.readString()
     )
